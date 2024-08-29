@@ -63,7 +63,7 @@ openssl req -new -key HUBCertificates/server.key -out HUBCertificates/server.csr
 # Generate a self-signed certificate for the specific domain
 sleep 1
 echo "Generate a self-signed certificate for the specific domain and the Subject alternative names"
-openssl x509 -req -debug -in HUBCertificates/server.csr -CA HUBCertificates/rootCA.crt -CAkey HUBCertificates/rootCA.key -CAcreateserial -out HUBCertificates/server.crt -days 365 -sha256 -extensions req_ext -extfile HUBCertificates/csr.conf
+openssl x509 -req -in HUBCertificates/server.csr -CA HUBCertificates/rootCA.crt -CAkey HUBCertificates/rootCA.key -CAcreateserial -out HUBCertificates/server.crt -days 365 -sha256 -extensions req_ext -extfile HUBCertificates/csr.conf
 
 # Display some information about the certificate
 sleep 1
